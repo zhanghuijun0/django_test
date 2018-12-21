@@ -14,9 +14,9 @@ RUN sed -i "s/archive.ubuntu.com/mirrors.163.com/g" /etc/apt/sources.list && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh && \
     cd $APP_HOME && \
-    git clone https://github.com/zhanghuijun0/django_test.git && cd $DJANGO_HOME\
+    git clone https://github.com/zhanghuijun0/django_test.git && cd $DJANGO_HOME && \
     virtualenv -p python3 venv && \
-    source venv/bin/activate && \
+    source $DJANGO_HOME/venv/bin/activate && \
     pip install -r requirements.txt -i https://pypi.mirrors.ustc.edu.cn/simple/  && \
 WORKDIR $DJANGO_HOME
 RUN $APP_HOME/venv/bin/python $DJANGO_HOME/manage.py runserver
