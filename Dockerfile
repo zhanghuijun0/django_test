@@ -18,4 +18,4 @@ RUN cd $APP_HOME && \
     virtualenv -p python3 venv && source $DJANGO_HOME/venv/bin/activate && which python && \
     pip install -r requirements.txt -i https://pypi.mirrors.ustc.edu.cn/simple/
 WORKDIR $DJANGO_HOME
-RUN $DJANGO_HOME/venv/bin/python $DJANGO_HOME/manage.py runserver
+CMD $DJANGO_HOME/venv/bin/python $DJANGO_HOME/manage.py runserver
