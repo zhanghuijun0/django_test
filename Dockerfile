@@ -2,7 +2,7 @@ FROM ubuntu:latest
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh && \
     sed -i "s/archive.ubuntu.com/mirrors.163.com/g" /etc/apt/sources.list && \
     apt-get update && \
-    apt-get install -y curl wget vim git tzdata --no-install-recommends && \
+    apt-get install -y curl wget vim git --no-install-recommends && \
     apt-get install -y python-pip python3-dev --no-install-recommends && \
     pip install virtualenv -i https://pypi.mirrors.ustc.edu.cn/simple && \
     echo "alias ll='ls \$LS_OPTIONS -l'" >> ~/.bashrc && \
