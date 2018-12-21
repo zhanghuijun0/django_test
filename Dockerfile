@@ -1,5 +1,6 @@
 FROM ubuntu:latest
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh && \
+    sed -i "s/archive.ubuntu.com/mirrors.163.com/g" /etc/apt/sources.list && \
     apt-get update && \
     apt-get install -y python-pip python3-dev --no-install-recommends && \
     apt-get install -y git --no-install-recommends && \
